@@ -2,20 +2,27 @@
 <!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-	<session-factory>
-		<!-- JDBC Database connection settings -->
-		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hiberdb</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">K1rimull@</property>
-		<property name="hbm2ddl.auto">create</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-		<property name="hibernate.show_sql">true</property>
-		<mapping class="hibernate.Student" />
-		<mapping class="hibernate.Address" />
-		<mapping class="hibernate.map.Question" />
-		<mapping class="hibernate.map.Answer" />
-		<mapping class="hibernate.map1.Emp" />
-		<mapping class="hibernate.map1.Project" />
-	</session-factory>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hiberdb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">K1rimull@</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="cache.use_second_level_cache">true</property>
+        <property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+        
+        <!-- Entity Mappings -->
+        <mapping class="hibernate.Student" />
+        <mapping class="hibernate.Address" />
+        <mapping class="oneToone.oneTomany.Question" />
+        <mapping class="oneToone.oneTomany.Answer" />
+        <mapping class="manyTomany.mapping.Emp" />
+        <mapping class="manyTomany.mapping.Project" />
+        <mapping class="queries.HQL.Questions" />
+        <mapping class="queries.HQL.Answers" />
+        <mapping resource="hibernateMapping/xml/Person.hbm.xml"/>
+    </session-factory>
 </hibernate-configuration>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="hibernateMapping.xml.Person" table="person">
+		<id name="iD" column="person_id">
+			<generator class="native" />
+		</id>
+		<property name="name" column="person_name" type="string" />
+	</class>
+</hibernate-mapping>

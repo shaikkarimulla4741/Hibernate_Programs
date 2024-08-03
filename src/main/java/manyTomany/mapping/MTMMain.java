@@ -1,4 +1,4 @@
-package hibernate.map1;
+package manyTomany.mapping;
 
 import java.util.ArrayList;
 import java.util.List;

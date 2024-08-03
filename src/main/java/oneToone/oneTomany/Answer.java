@@ -1,4 +1,4 @@
-package hibernate.map;
+package oneToone.oneTomany;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
